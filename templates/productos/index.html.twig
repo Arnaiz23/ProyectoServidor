@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+{% block claseProducto1 %}activeLink{% endblock %}
+{% block claseProducto %}class="activeLink"{% endblock %}
+{% block body %}
+     <div id="central" class="centralTablas">
+            <div id="add">
+                <button class="btn btn-active" id="administrarProductos">AÑADIR PRODUCTO</button>
+            </div>
+            <div id="tablaData">
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOMBRE</th>
+                        <th>MARCA</th>
+                        <th>TIPO</th>
+                        <th>DESCRIPCION CORTA</th>
+                        <th>DESCRIPCION LARGA</th>
+                        <th>PRECIO</th>
+                        <th>DEPORTE</th>
+                        <th>DISPONIBILIDAD</th>
+                        <th>EDITAR</th>
+                    </tr>
+                    <tr>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>
+                            <span class="material-icons-outlined">
+                                settings
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>
+                            <span class="material-icons-outlined">
+                                settings
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>
+                            <span class="material-icons-outlined">
+                                settings
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+{% endblock %}
+{% block javascript %}
+    const productos = document.querySelector("#administrarProductos");
+    productos.addEventListener("click",()=>{
+        {# location.href = "usuarios"; #}
+        alert("Añadir producto");
+    });
+{% endblock %}

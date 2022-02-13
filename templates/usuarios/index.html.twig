@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+{% block claseUser1 %}activeLink{% endblock %}
+{% block claseUser %}class="activeLink"{% endblock %}
+{% block body %}
+    <div id="central" class="centralTablas">
+            <div id="add">
+                <button class="btn btn-active" id="administrarUsuario">AÑADIR USUARIO</button>
+            </div>
+            <div id="tablaData">
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>USUARIO</th>
+                        <th>PASSWORD</th>
+                        <th>TIPO</th>
+                        <th>NOMBRE</th>
+                        <th>APELLIDOS</th>
+                        <th>CORREO</th>
+                        <th>DIRECCIONES</th>
+                        <th>EDITAR</th>
+                    </tr>
+                    <tr>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>
+                            <span class="material-icons-outlined">
+                            settings
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>
+                            <span class="material-icons-outlined">
+                            settings
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>
+                            <span class="material-icons-outlined">
+                            settings
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+{% endblock %}
+{% block javascript %}
+    const usuario = document.querySelector("#administrarUsuario");
+    usuario.addEventListener("click",()=>{
+        {# location.href = "usuarios"; #}
+        alert("Añadir usuario");
+    });
+{% endblock %}

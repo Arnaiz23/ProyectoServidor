@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+{% block claseHome1 %}activeLink{% endblock %}
+{% block claseHome %}class="activeLink"{% endblock %}
+{% block body %}{#reescribo el body del base con las instrucciones siguientes#}
+    <div id="central">
+            <div id="centralUsuarios">
+                <h3 class="subheader">Usuarios</h3>
+                <div class="centralUsuario">
+                    <img src="{{ asset('assets/images/usuario.svg') }}" alt="iconoUsuario1" class="imagenNav">
+                    <h4>Nombre</h4>
+                </div>
+                <div class="centralUsuario">
+                    <img src="{{ asset('assets/images/usuario.svg') }}" alt="iconoUsuario1" class="imagenNav">
+                    <h4>Nombre</h4>
+                </div>
+                <div class="centralUsuario">
+                    <img src="{{ asset('assets/images/usuario.svg') }}" alt="iconoUsuario1" class="imagenNav">
+                    <h4>Nombre</h4>
+                </div>
+                <button class="btn btn-secondary" id="administrar">Administrar</button>
+            </div>
+            <div id="centralProductos">
+                <div id="centralHeader">
+                    <h3 class="subheader">Productos</h3>
+                    <!-- <p>O</p> -->
+                    <span class="material-icons-outlined" id="btnProducts">
+                        settings
+                        </span>
+                </div>
+                <div class="centralProducto">
+                    <button class="btn btn-active">FUTBOL</button>
+                    <h4 class="nombreProducto">Camiseta MSBY</h4>
+                    <p>104€</p>
+                    <button class="btn btn-secondary">STOCK</button>
+                </div>
+                <div class="centralProducto">
+                    <button class="btn btn-danger">BALONCESTO</button>
+                    <h4 class="nombreProducto">Camiseta MSBY</h4>
+                    <p>104€</p>
+                    <button class="btn btn-secondary">STOCK</button>
+                </div>
+                <div class="centralProducto">
+                    <button class="btn btn-warning">VOLEIBOL</button>
+                    <h4 class="nombreProducto">Camiseta MSBY</h4>
+                    <p>104€</p>
+                    <button class="btn btn-secondary">STOCK</button>
+                </div>
+                <div class="centralProducto">
+                    <button class="btn btn-primary">RUNNING</button>
+                    <h4 class="nombreProducto">Camiseta MSBY</h4>
+                    <p>104€</p>
+                    <button class="btn btn-secondary">STOCK</button>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+{% block javascript %}
+    const administrar = document.querySelector("#administrar");
+    administrar.addEventListener("click",()=>{
+        location.href = "usuarios";
+    });
+
+    const products = document.querySelector("#btnProducts");
+    products.addEventListener("click",()=>{
+        location.href = "productos";
+    });
+{% endblock %}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>METASPORT</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+            <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
+        {% endblock %}
+
+        <!-- https://material.io/resources/icons/?style=baseline -->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
+            rel="stylesheet">
+        <!-- https://material.io/resources/icons/?style=outline -->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined"
+            rel="stylesheet">
+        <!-- https://material.io/resources/icons/?style=round -->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round"
+            rel="stylesheet">
+        <!-- https://material.io/resources/icons/?style=sharp -->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp"
+            rel="stylesheet">
+        <!-- https://material.io/resources/icons/?style=twotone -->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone"
+            rel="stylesheet">
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        <header id="header">
+            <div id="headerAdmin">
+                <span class="material-icons-outlined">
+                    account_box
+                    </span>
+                <h2>Administrador</h2>
+            </div>
+            <div id="headerNav">
+                <div class="headerNavOpcion">
+                    <span class="material-icons-outlined {% block claseHome1 %}{% endblock %}">
+                        home
+                        </span>
+                    <a href="home" {% block claseHome %}{% endblock %}>HOME</a>
+                </div>
+                <div class="headerNavOpcion">
+                    <span class="material-icons-outlined {% block claseUser1 %}{% endblock %}">
+                        people
+                        </span>
+                    <a href="usuarios" {% block claseUser %}{% endblock %}>USUARIOS</a>
+                </div>
+                <div class="headerNavOpcion">
+                    <span class="material-icons-outlined {% block claseProducto1 %}{% endblock %}">
+                        inventory_2
+                        </span>
+                    <a href="productos" {% block claseProducto %}{% endblock %}>PRODUCTOS</a>
+                </div>
+                <div class="headerNavOpcion">
+                    <span class="material-icons-outlined {% block clasePregunta1 %}{% endblock %}">
+                        help
+                        </span>
+                    <a href="preguntas" {% block clasePregunta %}{% endblock %}>PREGUNTAS</a>
+                </div>
+            </div>
+        </header>
+        <main id="main">
+        <div id="brandSesion">
+            <div id="brand">
+                <span class="material-icons-outlined">
+                    menu
+                    </span>
+                <h1>METASPORT</h1>
+            </div>
+            <button class="btn btn-danger" id="cerrarSesion">CERRAR SESIÓN</button>
+        </div>
+        {% block body %}{% endblock %}
+    </main>
+    <script>
+        {% block javascript %}{% endblock %}
+        const cerrarSesion = document.querySelector("#cerrarSesion");
+        cerrarSesion.addEventListener("click",()=>{
+            alert("Cerrando Sesion");
+        });
+    </script>
+    </body>
+</html>

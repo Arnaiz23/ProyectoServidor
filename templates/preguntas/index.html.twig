@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+{% block clasePregunta1 %}activeLink{% endblock %}
+{% block clasePregunta %}class="activeLink"{% endblock %}
+{% block body %}
+    <div id="central" class="centralTablas">
+            <div id="add">
+                <button class="btn btn-active" id="administrarPreguntas">AÑADIR PREGUNTA</button>
+            </div>
+            <div id="tablaData">
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>PREGUNTA</th>
+                        <th>RESPUESTA</th>
+                        <th>EDITAR</th>
+                    </tr>
+                    <tr>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>
+                            <span class="material-icons-outlined">
+                                settings
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>
+                            <span class="material-icons-outlined">
+                                settings
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>Hola</td>
+                        <td>
+                            <span class="material-icons-outlined">
+                                settings
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+{% endblock %}
+{% block javascript %}
+    const preguntas = document.querySelector("#administrarPreguntas");
+    preguntas.addEventListener("click",()=>{
+        {# location.href = "usuarios"; #}
+        alert("Añadir pregunta");
+    });
+{% endblock %}
