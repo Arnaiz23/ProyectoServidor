@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div id="login">
+        <form id="loginForm" method="post">
+            <div class="loginData">
+                <label for="user">Usuario</label>
+                <input type="text" name="user" id="user" class="input-success">
+            </div>
+            <div class="loginData">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="input-danger">
+            </div>
+            <div id="loginbtn">
+                <input type="submit" value="Iniciar Sesión" class="btn btn-success">
+                <input type="submit" value="No tengo cuenta" class="btn btn-danger">
+            </div>
+        </form>
+    </div>
+{% endblock %}
+{% block javascript %}
+    
+{% endblock %}

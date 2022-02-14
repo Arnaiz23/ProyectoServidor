@@ -12,7 +12,8 @@ class DefaultController extends AbstractController //para renderizar
      */
     public function listAction()
     {
-        return $this->redirectToRoute('home');
+        // return $this->redirectToRoute('home');
+        return $this->render('login/index.html.twig');
     }
 }
 ?>
