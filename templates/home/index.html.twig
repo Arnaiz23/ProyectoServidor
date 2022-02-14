@@ -1,8 +1,10 @@
-{% extends 'base.html.twig' %}
-{% block header %}{{include('comun/header.php')}}{% endblock %}
+{# {% extends 'base.html.twig' %} #}
+{% extends 'comun/comun.html.twig' %}
+{# {% block header %}{{include('comun/header.php')}}{% endblock %} #}
 {% block claseHome1 %}activeLink{% endblock %}
 {% block claseHome %}class="activeLink"{% endblock %}
-{% block body %}{#reescribo el body del base con las instrucciones siguientes#}
+{# {% block body %}{{include('comun/comunhtml.twig')}}{% endblock %} #}
+{% block body2 %}
     <div id="central">
             <div id="centralUsuarios">
                 <h3 class="subheader">Usuarios</h3>
@@ -29,7 +31,7 @@
                         </span>
                 </div>
                 <div class="centralProducto">
-                    <button class="btn btn-active">FUTBOL</button>
+                    <button class="btn btn-success">FUTBOL</button>
                     <h4 class="nombreProducto">Camiseta MSBY</h4>
                     <p>104€</p>
                     <button class="btn btn-secondary">STOCK</button>

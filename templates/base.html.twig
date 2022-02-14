@@ -32,18 +32,8 @@
     </head>
     <body>
     {% block header %}{% endblock %}
-    <main id="main">
-        <div id="brandSesion">
-            <div id="brand">
-                <span class="material-icons-outlined">
-                    menu
-                    </span>
-                <h1>METASPORT</h1>
-            </div>
-            <button class="btn btn-danger" id="cerrarSesion">CERRAR SESIÓN</button>
-        </div>
-        {% block body %}{% endblock %}
-    </main>
+    {% block body %}{% endblock %}
+    
     <script>
         {% block javascript %}{% endblock %}
         const cerrarSesion = document.querySelector("#cerrarSesion");

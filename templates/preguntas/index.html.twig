@@ -1,11 +1,12 @@
-{% extends 'base.html.twig' %}
-{% block header %}{{include('comun/header.php')}}{% endblock %}
+{# {% extends 'base.html.twig' %} #}
+{% extends 'comun/comun.html.twig' %}
+{# {% block header %}{{include('comun/header.php')}}{% endblock %} #}
 {% block clasePregunta1 %}activeLink{% endblock %}
 {% block clasePregunta %}class="activeLink"{% endblock %}
-{% block body %}
+{% block body2 %}
     <div id="central" class="centralTablas">
             <div id="add">
-                <button class="btn btn-active" id="administrarPreguntas">AÑADIR PREGUNTA</button>
+                <button class="btn btn-success" id="administrarPreguntas">AÑADIR PREGUNTA</button>
             </div>
             <div id="tablaData">
                 <table>

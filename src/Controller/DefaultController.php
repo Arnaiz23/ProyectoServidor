@@ -8,11 +8,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends AbstractController //para renderizar
 {
     /**
-     * @Route("/")
+     * @Route("/", name="login")
      */
     public function listAction()
     {
         // return $this->redirectToRoute('home');
+        if(isset($_COOKIE["session"]) && $_COOKIE["session"] == "yes") return $this->redirectToRoute('home');
         return $this->render('login/index.html.twig');
     }
 }

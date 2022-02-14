@@ -1,3 +1,5 @@
+{% extends 'base.html.twig' %}
+{% block header %}
 <header id="header">
     <div id="headerAdmin">
         <span class="material-icons-outlined">
@@ -32,3 +34,18 @@
         </div>
     </div>
 </header>
+{% endblock %}
+{% block body %}
+<main id="main">
+    <div id="brandSesion">
+        <div id="brand">
+            <span class="material-icons-outlined">
+                menu
+                </span>
+            <h1>METASPORT</h1>
+        </div>
+        <button class="btn btn-danger" id="cerrarSesion">CERRAR SESIÓN</button>
+    </div>
+    {% block body2 %}{% endblock %}
+</main>
+{% endblock %}
