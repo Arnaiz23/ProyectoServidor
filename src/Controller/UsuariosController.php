@@ -2,6 +2,7 @@
 // src/Controller/SemanaController.php
 namespace App\Controller;
 
+use App\Entity\Usuarios;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController; //para renderizar
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -12,7 +13,9 @@ class UsuariosController extends AbstractController //para renderizar
      */
     public function listAction()
     {
-        return $this->render('usuarios/index.html.twig');
+        $entityManager = $this->getDoctrine()->getManager();
+        $usuarios = $entityManager->getRepository(Usuarios::class)->findAll();
+        return $this->render('usuarios/index.html.twig', array('indice' => $usuarios));
     }
 }
 ?>

@@ -18,54 +18,24 @@
                         <th>NOMBRE</th>
                         <th>APELLIDOS</th>
                         <th>CORREO</th>
-                        <th>DIRECCIONES</th>
                         <th>EDITAR</th>
                     </tr>
+                    {% for valor in indice %}
                     <tr>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
+                        <td>{{valor.id}}</td>
+                        <td>{{valor.usuario}}</td>
+                        <td>·········</td>
+                        <td>{{valor.tipo}}</td>
+                        <td>{{valor.nombre}}</td>
+                        <td>{{valor.apellidos}}</td>
+                        <td>{{valor.correo}}</td>
                         <td>
                             <span class="material-icons-outlined">
                             settings
                             </span>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>
-                            <span class="material-icons-outlined">
-                            settings
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>
-                            <span class="material-icons-outlined">
-                            settings
-                            </span>
-                        </td>
-                    </tr>
+                    {% endfor %}
                 </table>
             </div>
         </div>

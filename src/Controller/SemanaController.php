@@ -12,9 +12,7 @@ class SemanaController extends AbstractController //para renderizar
      */
     public function listAction()
     {
-        $diasemana = array('Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo');
-        //ejemplo1.
-        return $this->render('semana/index.html.twig', array("indice" => $diasemana));
+        return $this->render('semana/index.html.twig');
     }
 }
 ?>
