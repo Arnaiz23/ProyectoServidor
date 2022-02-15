@@ -13,6 +13,9 @@ class DefaultController extends AbstractController //para renderizar
     public function listAction()
     {
         // return $this->redirectToRoute('home');
+        // ! Descomentar cuando ya se pueda
+        setcookie("session","yes");
+        
         if(isset($_COOKIE["session"]) && $_COOKIE["session"] == "yes") return $this->redirectToRoute('home');
         return $this->render('login/index.html.twig');
     }

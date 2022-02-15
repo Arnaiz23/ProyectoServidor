@@ -10,17 +10,21 @@
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" class="input-danger">
             </div>
+            <div class="loginData">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="input-success">
+            </div>
             <div id="loginbtn">
-                <input type="submit" value="Iniciar Sesión" class="btn btn-success">
-                <input type="submit" value="No tengo cuenta" class="btn btn-danger" id="cuentaOff">
+                <input type="submit" value="Registrarse" class="btn btn-success">
+                <input type="submit" value="Ya tengo cuenta" class="btn btn-danger" id="cuentaOn">
             </div>
         </form>
     </div>
 {% endblock %}
 
 {% block javascript %}
-    const botonR = document.querySelector("#cuentaOff");
-    botonR.addEventListener("click",()=>{
-        location.href = "register";
+    const boton = document.querySelector("#cuentaOn");
+    boton.addEventListener("click",()=>{
+        location.href = "/"
     });
 {% endblock %}

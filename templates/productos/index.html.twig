@@ -20,56 +20,34 @@
                         <th>PRECIO</th>
                         <th>DEPORTE</th>
                         <th>DISPONIBILIDAD</th>
+                        <th>IMAGEN</th>
                         <th>EDITAR</th>
+                        <th>ELIMINAR</th>
                     </tr>
-                    <tr>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>
-                            <span class="material-icons-outlined">
-                                settings
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>
-                            <span class="material-icons-outlined">
-                                settings
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>
-                            <span class="material-icons-outlined">
-                                settings
-                            </span>
-                        </td>
-                    </tr>
+                    {% for valor in indice %}
+                        <tr>
+                            <td>{{valor.id}}</td>
+                            <td>{{valor.nombre}}</td>
+                            <td>{{valor.marca}}</td>
+                            <td>{{valor.tipo}}</td>
+                            <td>{{valor.descripcionCorta}}</td>
+                            <td>{{valor.descripcionLarga}}</td>
+                            <td>{{valor.precio}}€</td>
+                            <td>{{valor.deporte}}</td>
+                            <td>{{valor.disponibilidad}}</td>
+                            <td>{{valor.imagen}}</td>
+                            <td>
+                                <span class="material-icons-outlined">
+                                    settings
+                                </span>
+                            </td>
+                            <td>
+                                <span class="material-icons-outlined">
+                                    delete
+                                </span>
+                            </td>
+                        </tr>
+                    {% endfor %}
                 </table>
             </div>
         </div>
@@ -77,7 +55,7 @@
 {% block javascript %}
     const productos = document.querySelector("#administrarProductos");
     productos.addEventListener("click",()=>{
-        {# location.href = "usuarios"; #}
-        alert("Añadir producto");
+        location.href = "add-productos";
+        {# alert("Añadir usuario"); #}
     });
 {% endblock %}

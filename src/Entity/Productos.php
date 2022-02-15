@@ -58,9 +58,14 @@ class Productos
     private $disponibilidad;
 
     /**
-     * @ORM\ManyToOne(targetEntity=usuarios::class, inversedBy="productos")
+     * @ORM\ManyToOne(targetEntity=Usuarios::class, inversedBy="productos")
      */
     private $usuario;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $imagen;
 
     public function getId(): ?int
     {
@@ -171,6 +176,18 @@ class Productos
     public function setUsuario(?usuarios $usuario): self
     {
         $this->usuario = $usuario;
+
+        return $this;
+    }
+
+    public function getImagen(): ?string
+    {
+        return $this->imagen;
+    }
+
+    public function setImagen(string $imagen): self
+    {
+        $this->imagen = $imagen;
 
         return $this;
     }

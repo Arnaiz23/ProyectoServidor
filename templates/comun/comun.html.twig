@@ -49,3 +49,10 @@
     {% block body2 %}{% endblock %}
 </main>
 {% endblock %}
+{% block javascript %}
+    const cerrarSesion = document.querySelector("#cerrarSesion");
+    cerrarSesion.addEventListener("click",()=>{
+        alert("Cerrando Sesion");
+    });
+
+{% endblock %}

@@ -19,6 +19,7 @@
                         <th>APELLIDOS</th>
                         <th>CORREO</th>
                         <th>EDITAR</th>
+                        <th>ELIMINAR</th>
                     </tr>
                     {% for valor in indice %}
                     <tr>
@@ -34,6 +35,11 @@
                             settings
                             </span>
                         </td>
+                        <td>
+                            <span class="material-icons-outlined">
+                            delete
+                            </span>
+                        </td>
                     </tr>
                     {% endfor %}
                 </table>
@@ -43,7 +49,7 @@
 {% block javascript %}
     const usuario = document.querySelector("#administrarUsuario");
     usuario.addEventListener("click",()=>{
-        {# location.href = "usuarios"; #}
-        alert("Añadir usuario");
+        location.href = "add-usuario";
+        {# alert("Añadir usuario"); #}
     });
 {% endblock %}

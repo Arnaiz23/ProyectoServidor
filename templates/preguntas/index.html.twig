@@ -17,54 +17,23 @@
                         <th>EDITAR</th>
                         <th>ELIMINAR</th>
                     </tr>
-                    <tr>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>
-                            <span class="material-icons-outlined">
-                                settings
-                            </span>
-                        </td>
-                        {# ! Buscar icono de eliminar #}
-                        <td>
-                            <span class="material-icons-outlined">
-                                settings
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>
-                            <span class="material-icons-outlined">
-                                settings
-                            </span>
-                        </td>
-                        {# ! Buscar icono de eliminar #}
-                        <td>
-                            <span class="material-icons-outlined">
-                                settings
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>Hola</td>
-                        <td>
-                            <span class="material-icons-outlined">
-                                settings
-                            </span>
-                        </td>
-                        {# ! Buscar icono de eliminar #}
-                        <td>
-                            <span class="material-icons-outlined">
-                                settings
-                            </span>
-                        </td>
-                    </tr>
+                    {% for valor in indice %}
+                        <tr>
+                            <td>{{valor.id}}</td>
+                            <td>{{valor.pregunta}}</td>
+                            <td>{{valor.respuesta}}</td>
+                            <td>
+                                <span class="material-icons-outlined">
+                                    settings
+                                </span>
+                            </td>
+                            <td>
+                                <span class="material-icons-outlined">
+                                    delete
+                                </span>
+                            </td>
+                        </tr>
+                    {% endfor %}
                 </table>
             </div>
         </div>
@@ -72,7 +41,7 @@
 {% block javascript %}
     const preguntas = document.querySelector("#administrarPreguntas");
     preguntas.addEventListener("click",()=>{
-        {# location.href = "usuarios"; #}
-        alert("Añadir pregunta");
+        location.href = "add-preguntas";
+        {# alert("Añadir usuario"); #}
     });
 {% endblock %}

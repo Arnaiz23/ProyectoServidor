@@ -28,7 +28,7 @@ class Preguntas
     private $respuesta;
 
     /**
-     * @ORM\ManyToOne(targetEntity=usuarios::class, inversedBy="preguntas")
+     * @ORM\ManyToOne(targetEntity=Usuarios::class, inversedBy="preguntas")
      */
     private $usuario;
 
