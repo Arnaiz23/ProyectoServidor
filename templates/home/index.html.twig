@@ -8,18 +8,14 @@
     <div id="central">
             <div id="centralUsuarios">
                 <h3 class="subheader">Usuarios</h3>
-                <div class="centralUsuario">
-                    <img src="{{ asset('assets/images/usuario.svg') }}" alt="iconoUsuario1" class="imagenNav">
-                    <h4>Nombre</h4>
-                </div>
-                <div class="centralUsuario">
-                    <img src="{{ asset('assets/images/usuario.svg') }}" alt="iconoUsuario1" class="imagenNav">
-                    <h4>Nombre</h4>
-                </div>
-                <div class="centralUsuario">
-                    <img src="{{ asset('assets/images/usuario.svg') }}" alt="iconoUsuario1" class="imagenNav">
-                    <h4>Nombre</h4>
-                </div>
+                {% for usuario in usuarios %}
+                    {% if loop.index0 <= 3 %}
+                        <div class="centralUsuario">
+                            <img src="{{ asset('assets/images/usuario.svg') }}" alt="iconoUsuario1" class="imagenNav">
+                            <h4>{{usuario.usuario}}</h4>
+                        </div>
+                    {% endif %}
+                {% endfor %}
                 <button class="btn btn-secondary" id="administrar">Administrar</button>
             </div>
             <div id="centralProductos">
@@ -30,30 +26,36 @@
                         settings
                         </span>
                 </div>
-                <div class="centralProducto">
-                    <button class="btn btn-success">FUTBOL</button>
-                    <h4 class="nombreProducto">Camiseta MSBY</h4>
-                    <p>104€</p>
-                    <button class="btn btn-secondary">STOCK</button>
-                </div>
-                <div class="centralProducto">
-                    <button class="btn btn-danger">BALONCESTO</button>
-                    <h4 class="nombreProducto">Camiseta MSBY</h4>
-                    <p>104€</p>
-                    <button class="btn btn-secondary">STOCK</button>
-                </div>
-                <div class="centralProducto">
-                    <button class="btn btn-warning">VOLEIBOL</button>
-                    <h4 class="nombreProducto">Camiseta MSBY</h4>
-                    <p>104€</p>
-                    <button class="btn btn-secondary">STOCK</button>
-                </div>
-                <div class="centralProducto">
-                    <button class="btn btn-primary">RUNNING</button>
-                    <h4 class="nombreProducto">Camiseta MSBY</h4>
-                    <p>104€</p>
-                    <button class="btn btn-secondary">STOCK</button>
-                </div>
+                {% for producto in productos %}
+                    {% if loop.index0 <= 6 %}
+                        <div class="centralProducto">
+                            {# {% switch producto.deporte %}
+                                {% case 'voleibol' %}
+                                    <p>value is "value1"</p>
+                                {% case 'futbol' %}
+                                    <p>value is "value2"</p>
+                                {% case 'baloncesto' %}
+                                {% case 'running' %}
+                                    <p>value is "value3" or "value4"</p>
+                                {% default %}
+                                    <p>value is something else</p>
+                            {% endswitch %} #}
+
+                            {% if producto.deporte == "voleibol" %}
+                                <button class="btn btn-warning">{{producto.deporte}}</button>
+                            {% elseif producto.deporte == "futbol" %}
+                                <button class="btn btn-success">{{producto.deporte}}</button>
+                            {% elseif producto.deporte == "baloncesto" %}
+                                <button class="btn btn-danger">{{producto.deporte}}</button>
+                            {% else %}
+                                <button class="btn btn-primary">{{producto.deporte}}</button>
+                            {% endif %}                            
+                            <h4 class="nombreProducto">{{producto.nombre}}</h4>
+                            <p>{{producto.precio}}€</p>
+                            <button class="btn btn-secondary">STOCK</button>
+                        </div>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
 {% endblock %}

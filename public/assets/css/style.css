@@ -195,11 +195,15 @@ body {
   margin: 15px;
   font-size: 30px;
   color: #999999;
+  cursor: pointer;
 }
 #main #central #centralProductos .centralProducto {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+#main #central #centralProductos .centralProducto button {
+  text-transform: uppercase;
 }
 #main #central #centralProductos .centralProducto h4 {
   font-size: 18px;
