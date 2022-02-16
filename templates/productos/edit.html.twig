@@ -1,0 +1,18 @@
+{% extends 'comun/comun.html.twig' %}
+
+{% block claseProducto1 %}activeLink{% endblock %}
+{% block claseProducto %}class="activeLink"{% endblock %}
+
+{% block body2 %}
+    <div id="central" class="centralTablas">
+        <form action="" method="POST">
+            <div id="add2">
+                <h3>MODIFICAR</h3>
+                <button class="btn btn-success" id="administrarUsuario">MODIFICAR PRODUCTO</button>
+            </div>
+            <div id="formAddAndModify">
+                {{ include('productos/_form.html.twig') }}
+            </div>
+        </form>
+    </div>
+{% endblock %}

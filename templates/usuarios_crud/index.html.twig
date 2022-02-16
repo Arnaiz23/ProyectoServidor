@@ -1,0 +1,60 @@
+{# {% extends 'base.html.twig' %} #}
+{% extends 'comun/comun.html.twig' %}
+
+{% block claseUser1 %}activeLink{% endblock %}
+{% block claseUser %}class="activeLink"{% endblock %}
+
+{# {% block title %}Usuarios index{% endblock %} #}
+
+{% block body2 %}
+    {# <h1>Usuarios index</h1> #}
+
+    <div id="central" class="centralTablas">
+            <div id="add2">
+                <h3>USUARIOS</h3>
+                <a href="{{ path('usuarios_c_r_u_d_new') }}">
+                    <button class="btn btn-success" id="administrarUsuario">AÑADIR USUARIO</button>
+                </a>
+            </div>
+            <div id="tablaData">
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>USUARIO</th>
+                        <th>PASSWORD</th>
+                        <th>TIPO</th>
+                        <th>NOMBRE</th>
+                        <th>APELLIDOS</th>
+                        <th>CORREO</th>
+                        <th>EDITAR</th>
+                        <th>DETALLES</th>
+                    </tr>
+                    {% for usuario in usuarios %}
+                        <tr>
+                            <td>{{ usuario.id }}</td>
+                            <td>{{ usuario.usuario }}</td>
+                            <td>{{ usuario.password }}</td>
+                            <td>{{ usuario.tipo }}</td>
+                            <td>{{ usuario.nombre }}</td>
+                            <td>{{ usuario.apellidos }}</td>
+                            <td>{{ usuario.correo }}</td>
+                            <td>
+                                <a href="{{ path('usuarios_c_r_u_d_edit', {'id': usuario.id}) }}">
+                                    <span class="material-icons-outlined">settings</span>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{ path('usuarios_c_r_u_d_show', {'id': usuario.id}) }}">
+                                    <span class="material-icons-outlined">description</span>
+                                </a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="8">no records found</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+{% endblock %}

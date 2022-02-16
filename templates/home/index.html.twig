@@ -41,11 +41,11 @@
                                     <p>value is something else</p>
                             {% endswitch %} #}
 
-                            {% if producto.deporte == "voleibol" %}
+                            {% if producto.deporte|lower == "voleibol" %}
                                 <button class="btn btn-warning">{{producto.deporte}}</button>
-                            {% elseif producto.deporte == "futbol" %}
+                            {% elseif producto.deporte|lower == "futbol" %}
                                 <button class="btn btn-success">{{producto.deporte}}</button>
-                            {% elseif producto.deporte == "baloncesto" %}
+                            {% elseif producto.deporte|lower == "baloncesto" %}
                                 <button class="btn btn-danger">{{producto.deporte}}</button>
                             {% else %}
                                 <button class="btn btn-primary">{{producto.deporte}}</button>

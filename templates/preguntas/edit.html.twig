@@ -1,0 +1,19 @@
+{% extends 'comun/comun.html.twig' %}
+
+{% block clasePregunta1 %}activeLink{% endblock %}
+{% block clasePregunta %}class="activeLink"{% endblock %}
+
+{% block body2 %}
+
+    <div id="central" class="centralTablas">
+        <form action="" method="POST">
+            <div id="add2">
+                <h3>MODIFICAR</h3>
+                <button class="btn btn-success" id="administrarUsuario">MODIFICAR PREGUNTA</button>
+            </div>
+            <div id="formAddAndModify">
+                {{ include('preguntas/_form.html.twig', {'button_label': 'Update'}) }}
+            </div>
+        </form>
+    </div>
+{% endblock %}

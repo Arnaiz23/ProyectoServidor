@@ -155,6 +155,9 @@ body {
   align-items: center;
   margin: 50px;
 }
+#main #central form{
+  width: 100%;
+}
 #main #central #centralUsuarios {
   background-color: #fff;
   width: 20%;
@@ -374,6 +377,14 @@ body {
 #formAddAndModify {
   display: flex;
   width: 80%;
+  margin: 0 auto;
+}
+
+#formAddAndModify label{
+  margin-bottom: 30px;
+  font-size: 20px;
+  color: #666666;
+  margin-left: 40px;
 }
 #formAddAndModify form {
   display: flex;
@@ -412,6 +423,46 @@ body {
 
 .obligatoryField {
   color: red;
+}
+
+a{
+  text-decoration: none;
+}
+
+a span{
+  color: #000;
+}
+
+button{
+  background-color: transparent;
+  border: none;
+}
+
+.required{
+  margin-bottom: 30px;
+  font-size: 20px;
+  color: #666666;
+  margin-left: 40px;
+}
+
+#usuarios div, #preguntas div, #productos div{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 30px 0;
+}
+
+#usuarios input,textarea,select , #preguntas input,textarea,select, #productos input,textarea,select{
+  font-size: 16px;
+  padding: 7px 10px;
+  width: 400px;
+  border: 2px solid #929090;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

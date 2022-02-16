@@ -1,0 +1,31 @@
+{# {% extends 'base.html.twig' %}
+
+{% block title %}New Usuarios{% endblock %}
+
+{% block body %}
+    <h1>Create new Usuarios</h1>
+
+    {{ include('usuarios_crud/_form.html.twig') }}
+
+    <a href="{{ path('usuarios_c_r_u_d_index') }}">back to list</a>
+{% endblock %} #}
+
+{% extends 'comun/comun.html.twig' %}
+
+{% block claseUser1 %}activeLink{% endblock %}
+{% block claseUser %}class="activeLink"{% endblock %}
+
+{% block body2 %}
+
+    <div id="central" class="centralTablas">
+        <form action="" method="POST">
+            <div id="add2">
+                <h3>AÑADIR</h3>
+                <button class="btn btn-success" id="administrarUsuario">AÑADIR USUARIO</button>
+            </div>
+            <div id="formAddAndModify">
+                {{ include('usuarios_crud/_form.html.twig') }}
+            </div>
+        </form>
+    </div>
+{% endblock %}

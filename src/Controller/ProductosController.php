@@ -1,21 +1,93 @@
 <?php
-// src/Controller/SemanaController.php
+
 namespace App\Controller;
 
 use App\Entity\Productos;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController; //para renderizar
+use App\Form\ProductosType;
+use App\Repository\ProductosRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ProductosController extends AbstractController //para renderizar
+/**
+ * @Route("/productos")
+ */
+class ProductosController extends AbstractController
 {
     /**
-     * @Route("/productos", name="productos")
+     * @Route("/", name="productos_index", methods={"GET"})
      */
-    public function listAction()
+    public function index(ProductosRepository $productosRepository): Response
     {
-        $entityManager = $this->getDoctrine()->getManager();
-        $productos = $entityManager->getRepository(Productos::class)->findAll();
-        return $this->render('productos/index.html.twig', array("indice" => $productos));
+        return $this->render('productos/index.html.twig', [
+            'productos' => $productosRepository->findAll(),
+        ]);
+    }
+
+    /**
+     * @Route("/new", name="productos_new", methods={"GET", "POST"})
+     */
+    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $producto = new Productos();
+        $form = $this->createForm(ProductosType::class, $producto);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->persist($producto);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('productos_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('productos/new.html.twig', [
+            'producto' => $producto,
+            'form' => $form,
+        ]);
+    }
+
+    /**
+     * @Route("/{id}", name="productos_show", methods={"GET"})
+     */
+    public function show(Productos $producto): Response
+    {
+        return $this->render('productos/show.html.twig', [
+            'producto' => $producto,
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/edit", name="productos_edit", methods={"GET", "POST"})
+     */
+    public function edit(Request $request, Productos $producto, EntityManagerInterface $entityManager): Response
+    {
+        $form = $this->createForm(ProductosType::class, $producto);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->flush();
+
+            return $this->redirectToRoute('productos_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('productos/edit.html.twig', [
+            'producto' => $producto,
+            'form' => $form,
+        ]);
+    }
+
+    /**
+     * @Route("/{id}", name="productos_delete", methods={"POST"})
+     */
+    public function delete(Request $request, Productos $producto, EntityManagerInterface $entityManager): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$producto->getId(), $request->request->get('_token'))) {
+            $entityManager->remove($producto);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('productos_index', [], Response::HTTP_SEE_OTHER);
     }
 }
-?>

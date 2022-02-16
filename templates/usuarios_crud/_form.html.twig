@@ -1,0 +1,9 @@
+{# {% form_theme form 'AcmeDemoBundle:Form:fields.html.twig' %} #}
+
+{{ form_start(form) }}
+    {# {% block btn %}
+        <button class="btn btn-success" id="administrarUsuario">AÑADIR USUARIO</button>
+    {% endblock %} #}
+    {# <button class="btn">{{ button_label|default('Save') }}</button> #}
+    {{ form_widget(form) }}
+{{ form_end(form) }}

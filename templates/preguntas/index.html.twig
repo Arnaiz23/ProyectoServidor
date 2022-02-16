@@ -1,12 +1,14 @@
-{# {% extends 'base.html.twig' %} #}
 {% extends 'comun/comun.html.twig' %}
-{# {% block header %}{{include('comun/header.php')}}{% endblock %} #}
+
 {% block clasePregunta1 %}activeLink{% endblock %}
 {% block clasePregunta %}class="activeLink"{% endblock %}
 {% block body2 %}
     <div id="central" class="centralTablas">
-            <div id="add">
-                <button class="btn btn-success" id="administrarPreguntas">AÑADIR PREGUNTA</button>
+            <div id="add2">
+                <h3>PREGUNTAS</h3>
+                <a href="{{ path('preguntas_new') }}">
+                    <button class="btn btn-success" id="administrarPreguntas">AÑADIR PREGUNTA</button>
+                </a>
             </div>
             <div id="tablaData">
                 <table>
@@ -15,33 +17,30 @@
                         <th>PREGUNTA</th>
                         <th>RESPUESTA</th>
                         <th>EDITAR</th>
-                        <th>ELIMINAR</th>
+                        <th>DETALLES</th>
                     </tr>
-                    {% for valor in indice %}
+                    {% for pregunta in preguntas %}
                         <tr>
-                            <td>{{valor.id}}</td>
-                            <td>{{valor.pregunta}}</td>
-                            <td>{{valor.respuesta}}</td>
+                            <td>{{ pregunta.id }}</td>
+                            <td>{{ pregunta.pregunta }}</td>
+                            <td>{{ pregunta.respuesta }}</td>
                             <td>
-                                <span class="material-icons-outlined">
-                                    settings
-                                </span>
+                                <a href="{{ path('preguntas_edit', {'id': pregunta.id}) }}">
+                                    <span class="material-icons-outlined">settings</span>
+                                </a>
                             </td>
                             <td>
-                                <span class="material-icons-outlined">
-                                    delete
-                                </span>
+                                <a href="{{ path('preguntas_show', {'id': pregunta.id}) }}">
+                                    <span class="material-icons-outlined">description</span>
+                                </a>
                             </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="4">no records found</td>
                         </tr>
                     {% endfor %}
                 </table>
             </div>
         </div>
-{% endblock %}
-{% block javascript %}
-    const preguntas = document.querySelector("#administrarPreguntas");
-    preguntas.addEventListener("click",()=>{
-        location.href = "add-preguntas";
-        {# alert("Añadir usuario"); #}
-    });
 {% endblock %}

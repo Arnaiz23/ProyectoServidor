@@ -1,0 +1,57 @@
+{% extends 'comun/comun.html.twig' %}
+
+{% block clasePregunta1 %}activeLink{% endblock %}
+{% block clasePregunta %}class="activeLink"{% endblock %}
+
+{% block body2 %}
+
+    <div id="central" class="centralTablas">
+            <div id="add2">
+                <h3>DETALLES</h3>
+                <a href="{{ path('usuarios_c_r_u_d_new') }}">
+                    <button class="btn btn-success" id="administrarUsuario">AÑADIR PREGUNTA</button>
+                </a>
+            </div>
+            <div id="tablaData">
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>PREGUNTA</th>
+                        <th>RESPUESTA</th>
+                        <th>ELIMINAR</th>
+                    </tr>
+                    <tr>
+                        <td>{{ pregunta.id }}</td>
+                            <td>{{ pregunta.pregunta }}</td>
+                            <td>{{ pregunta.respuesta }}</td>
+                        <td>
+                            {{ include('preguntas/_delete_form.html.twig') }}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    {# <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ pregunta.id }}</td>
+            </tr>
+            <tr>
+                <th>Pregunta</th>
+                <td>{{ pregunta.pregunta }}</td>
+            </tr>
+            <tr>
+                <th>Respuesta</th>
+                <td>{{ pregunta.respuesta }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('preguntas_index') }}">back to list</a>
+
+    <a href="{{ path('preguntas_edit', {'id': pregunta.id}) }}">edit</a>
+
+    {{ include('preguntas/_delete_form.html.twig') }} #}
+{% endblock %}
