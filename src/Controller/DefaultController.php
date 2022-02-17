@@ -2,9 +2,12 @@
 // src/Controller/SemanaController.php
 namespace App\Controller;
 
+use App\Entity\Usuarios;
+use userBundle\Form\RegisterType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController; //para renderizar
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Response;
+
+use Symfony\Component\HttpFoundation\Request;
 /**
  * @Route("/")
  */
@@ -26,23 +29,71 @@ class DefaultController extends AbstractController //para renderizar
     }
 
     /**
-     * @Route("/comprobar", name="comprobar", methods={"POST"})
+     * @Route("/comprobar", name="comprobar", methods={"GET", "POST"})
      */
     
-    public function comprobar()
-    {
+    public function comprobar(Request $request){
+        $user = new Usuarios();
         
-        return $this->render('login/index.html.twig');
+        // Crear un formulario usando el tipo UserType
+        $form = $this->createForm(RegisterType::class, $user);
+        
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()) {
+            // Resto de la lógica
+            $data = $form->getData();
+
+            // Donde $data  contiene un array como:
+            // array(
+            //    "name" => "El nombre enviado",
+            //    "username" => "El username enviado",
+            //    "description" => "La descripcion enviada",
+            //    "password" => "La clave enviada"
+            // );
+            /* if($data == "admin" && $data["password"] == "admin"){
+                return $this->render('home/index.html.twig');
+            } */
+            
+        }
+
+        return $this->render('login/index.html.twig', array(
+            'form' => $form->createView()
+        ));
     }
 
     /**
-     * @Route("/registro", name="registro", methods={"GET", "POST"})
+     * @Route("/registro", name="registro", methods={"GET"})
      */
-    
-    public function registro()
-    {
+    public function newuserAction(Request $request){
+        $user = new Usuarios();
         
-        return $this->render('register/index.html.twig');
+        // Crear un formulario usando el tipo UserType
+        $form = $this->createForm(RegisterType::class, $user);
+        
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()) {
+            // Resto de la lógica
+            $data = $form->getData();
+
+            // Donde $data  contiene un array como:
+            // array(
+            //    "name" => "El nombre enviado",
+            //    "username" => "El username enviado",
+            //    "description" => "La descripcion enviada",
+            //    "password" => "La clave enviada"
+            // );
+            if($data["usuario"] == "admin" && $data["password"] == "admin"){
+                return $this->render('home/index.html.twig');
+            }
+        }
+
+        return $this->render('register/index.html.twig', array(
+            'form' => $form->createView()
+        ));
     }
 }
 ?>
