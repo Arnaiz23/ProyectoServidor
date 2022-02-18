@@ -1,0 +1,9 @@
+/* * ------------PRODUCTOS---------------- */
+
+@media screen and (max-width: 1738px) {
+    #main .centralTablas #tablaData table {
+      display: block;
+      overflow-x: auto;
+    }
+  }
+  /* * -------------------------------------- */
