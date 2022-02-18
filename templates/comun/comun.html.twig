@@ -36,15 +36,10 @@
                 </span>
             <h1>METASPORT</h1>
         </div>
-        <button class="btn btn-danger" id="cerrarSesion">CERRAR SESIÓN</button>
+        <a href="{{ path('app_logout') }}">
+            <button class="btn btn-danger" id="cerrarSesion">CERRAR SESIÓN</button>
+        </a>
     </div>
     {% block body2 %}{% endblock %}
 </main>
-{% endblock %}
-{% block javascript %}
-    const cerrarSesion = document.querySelector("#cerrarSesion");
-    cerrarSesion.addEventListener("click",()=>{
-        alert("Cerrando Sesion");
-    });
-
 {% endblock %}

@@ -21,7 +21,7 @@ class HomeController extends AbstractController //para renderizar
         $entityManager = $this->getDoctrine()->getManager();
         $usuarios = $entityManager->getRepository(Usuarios::class)->findAll();
 
-        if((isset($_COOKIE["session"]) && $_COOKIE["session"] != "yes") || !isset($_COOKIE["session"])) return $this->redirectToRoute('login');
+        // if((isset($_COOKIE["session"]) && $_COOKIE["session"] != "yes") || !isset($_COOKIE["session"])) return $this->redirectToRoute('login');
         return $this->render('home/index.html.twig', array("usuarios" => $usuarios, "productos" => $productos));
     }
 }
