@@ -514,6 +514,7 @@ button{
   outline: none;
 }
 
+/* * ------------LOGIN---------------- */
 
 @media screen and (max-width: 1601px) {
   #formLogin{
@@ -557,5 +558,63 @@ button{
     width: 74%;
   }
 }
+
+/* * -------------------------------------- */
+
+/* * ------------HOME---------------- */
+
+@media screen and (max-width: 1681px) {
+  #main #central{
+    justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1585px) {
+  #main #central{
+    margin: 50px 20px;
+  }
+}
+
+@media screen and (max-width: 1443px) {
+  #main #central{
+    margin: 50px 10px;
+  }
+}
+
+@media screen and (max-width: 1287px) {
+  #main #central{
+    flex-direction: column;
+  }
+  #main #central #centralUsuarios {
+    margin-top: 3%;
+    order: 1;
+  }
+
+  #main #central #centralUsuarios{
+    width: 35%;
+  }
+
+  #main #central #centralProductos{
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  #header{
+    width: 21%;
+  }
+}
+
+/* * -------------------------------------- */
+
+/* * ------------USUARIOS---------------- */
+
+@media screen and (max-width: 1681px) {
+  #main #central{
+    justify-content: space-evenly;
+  }
+}
+
+/* * -------------------------------------- */
 
 /*# sourceMappingURL=style.css.map */

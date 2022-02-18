@@ -3,6 +3,10 @@
 {% block claseProducto1 %}activeLink{% endblock %}
 {% block claseProducto %}class="activeLink"{% endblock %}
 
+{% block stylesheets1 %}
+    <link rel="stylesheet" href="{{ asset('assets/css/styleProductos.css')}}">
+{% endblock %}
+
 {% block body2 %}
 
     <div id="central" class="centralTablas">
@@ -14,43 +18,47 @@
         </div>
         <div id="tablaData">
         <table>
-            <tr>
-                <th>ID</th>
-                <th>NOMBRE</th>
-                <th>MARCA</th>
-                <th>TIPO</th>
-                <th>DESCRIPCION CORTA</th>
-                <th>DESCRIPCION LARGA</th>
-                <th>PRECIO</th>
-                <th>DEPORTE</th>
-                <th>DISPONIBILIDAD</th>
-                <th>IMAGEN</th>
-                <th>EDITAR</th>
-                <th>DETALLES</th>
-            </tr>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>MARCA</th>
+                    <th>TIPO</th>
+                    <th>DESCRIPCION CORTA</th>
+                    <th>DESCRIPCION LARGA</th>
+                    <th>PRECIO</th>
+                    <th>DEPORTE</th>
+                    <th>DISPONIBILIDAD</th>
+                    <th>IMAGEN</th>
+                    <th>EDITAR</th>
+                    <th>DETALLES</th>
+                </tr>
+            </thead>
         {% for producto in productos %}
-            <tr>
-                <td>{{ producto.id }}</td>
-                <td>{{ producto.nombre }}</td>
-                <td>{{ producto.marca }}</td>
-                <td>{{ producto.tipo }}</td>
-                <td>{{ producto.descripcionCorta }}</td>
-                <td>{{ producto.descripcionLarga }}</td>
-                <td>{{ producto.precio }}</td>
-                <td>{{ producto.deporte }}</td>
-                <td>{{ producto.disponibilidad }}</td>
-                <td>{{ producto.imagen }}</td>
-                <td>
-                    <a href="{{ path('productos_edit', {'id': producto.id}) }}">
-                        <span class="material-icons-outlined">settings</span>
-                    </a>
-                </td>
-                <td>
-                    <a href="{{ path('productos_show', {'id': producto.id}) }}">
-                        <span class="material-icons-outlined">description</span>
-                    </a>
-                </td>
-            </tr>
+            <tbody>
+                <tr>
+                    <td>{{ producto.id }}</td>
+                    <td>{{ producto.nombre }}</td>
+                    <td>{{ producto.marca }}</td>
+                    <td>{{ producto.tipo }}</td>
+                    <td>{{ producto.descripcionCorta }}</td>
+                    <td>{{ producto.descripcionLarga }}</td>
+                    <td>{{ producto.precio }}</td>
+                    <td>{{ producto.deporte }}</td>
+                    <td>{{ producto.disponibilidad }}</td>
+                    <td>{{ producto.imagen }}</td>
+                    <td>
+                        <a href="{{ path('productos_edit', {'id': producto.id}) }}">
+                            <span class="material-icons-outlined">settings</span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('productos_show', {'id': producto.id}) }}">
+                            <span class="material-icons-outlined">description</span>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
         {% else %}
             <tr>
                 <td colspan="11">no records found</td>

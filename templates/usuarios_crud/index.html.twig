@@ -18,18 +18,21 @@
             </div>
             <div id="tablaData">
                 <table>
-                    <tr>
-                        <th>ID</th>
-                        <th>USUARIO</th>
-                        <th>PASSWORD</th>
-                        <th>TIPO</th>
-                        <th>NOMBRE</th>
-                        <th>APELLIDOS</th>
-                        <th>CORREO</th>
-                        <th>EDITAR</th>
-                        <th>DETALLES</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>USUARIO</th>
+                            <th>PASSWORD</th>
+                            <th>TIPO</th>
+                            <th>NOMBRE</th>
+                            <th>APELLIDOS</th>
+                            <th>CORREO</th>
+                            <th>EDITAR</th>
+                            <th>DETALLES</th>
+                        </tr>
+                    </thead>
                     {% for usuario in usuarios %}
+                    <tbody>
                         <tr>
                             <td>{{ usuario.id }}</td>
                             <td>{{ usuario.usuario }}</td>
@@ -49,6 +52,7 @@
                                 </a>
                             </td>
                         </tr>
+                    </tbody>
                     {% else %}
                         <tr>
                             <td colspan="8">no records found</td>
