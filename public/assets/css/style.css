@@ -473,6 +473,7 @@ button{
   height: 100vh;
   background-image: url("/assets/images/fondoVoleibol.png");
   background-size: cover;
+  background-position: right bottom
 }
 
 #formLogin{
@@ -511,6 +512,50 @@ button{
 
 .opcionesLogin input:focus{
   outline: none;
+}
+
+
+@media screen and (max-width: 1601px) {
+  #formLogin{
+    width: 32%;
+    min-width: 500px;
+  }
+}
+
+@media screen and (max-width: 1495px) {
+  #formLogin{
+    margin-right: 18%;
+  }
+}
+
+@media screen and (max-width: 1263px) {
+  #formLogin{
+    margin-right: 36%;
+  }
+}
+
+@media screen and (max-width: 1045px) {
+  #formLogin{
+    margin-bottom: 30%;
+  }
+}
+
+@media screen and (max-width: 943px) {
+  #formLogin{
+    margin-bottom: 0;
+    margin-right: 0;
+    box-shadow: 5px 5px 5px #000;
+  }
+}
+
+@media screen and (max-width: 621px) {
+  #formLogin{
+    min-width: 415px;
+  }
+
+  .opcionesLogin input {
+    width: 74%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
