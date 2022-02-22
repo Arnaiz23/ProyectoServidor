@@ -514,6 +514,10 @@ button{
   outline: none;
 }
 
+#loginError{
+  color: red;
+}
+
 /* * ------------LOGIN---------------- */
 
 @media screen and (max-width: 1601px) {
